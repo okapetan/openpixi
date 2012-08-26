@@ -205,18 +205,18 @@ public class Particle2DPanel extends JPanel {
 		{
 			s.f.clear();
 			ConstantForce force = new ConstantForce();
-			force.bz = - 0.23; // -ConstantsSI.g;
+			//force.bz = - 0.23; // -ConstantsSI.g;
 			//force.gy = -1;
-			//force.drag = 0.08;
+			force.drag = 0.08;
 			s.f.add(force);
-			InitialConditions.createRandomParticles(s.getWidth(), s.getHeight(), s.getSpeedOfLight(), 1, 10);
+			s.particles = InitialConditions.createRandomParticles(s.getWidth(), s.getHeight(), s.getSpeedOfLight(), 1, 1);
 			Particle par = (Particle) s.particles.get(0);
-			par.setX(this.getWidth() * 0.5);
-			par.setY(this.getHeight() * 0.5);
+			par.setX(s.getWidth() * 0);
+			par.setY(s.getHeight() * 0.5);
 			//System.out.println(this.getWidth() * 0.5 + " x0");
 			//System.out.println(this.getHeight() * 0.5 + " y0");
-			par.setVx(10);
-			par.setVy(10);
+			par.setVx(50);
+			par.setVy(0);
 			par.setMass(1);
 			par.setCharge(1);
 		}
